@@ -12,10 +12,10 @@
     <script type="module" src="script.js"></script>
 
     <style>
-      .title {
+      /* .title {
         color: red;
         background: green;
-      }
+      } */
       /* @media only screen and (max-width: 800px) {
         .title {
           color: blue;
@@ -73,9 +73,143 @@
       .col-12 {
         width: 100%;
       }
+
+      .title {
+        color: red;
+        background: #aaa;
+        padding: 30px;
+        font-size: 30px;
+      }
+      .sidebar {
+        background: #cccccc70;
+      }
+      .content {
+        background: #ec243450;
+      }
+      /* tất cả thẻ có class bắt đầu bằng col- có thuộc tính float */
+      [class*='col-'] {
+        float: left;
+      }
+      .row {
+        clear: both;
+      }
+
+      @media only screen and (max-width: 568px) {
+        .col-xs-1 {
+          width: 8.33%;
+        }
+        .col-xs-2 {
+          width: 16.66%;
+        }
+        .col-xs-3 {
+          width: 25%;
+        }
+        .col-xs-4 {
+          width: 33.33%;
+        }
+        .col-xs-5 {
+          width: 41.66%;
+        }
+        .col-xs-6 {
+          width: 50%;
+        }
+        .col-xs-7 {
+          width: 58.33%;
+        }
+        .col-xs-8 {
+          width: 66.66%;
+        }
+        .col-xs-9 {
+          width: 75%;
+        }
+        .col-xs-10 {
+          width: 83.33%;
+        }
+        .col-xs-11 {
+          width: 91.66%;
+        }
+        .col-xs-12 {
+          width: 100%;
+        }
+      }
+      .menu-item {
+        list-style: none;
+        background: green;
+        width: 100px;
+        border-bottom: 1px solid white;
+        padding: 5px;
+        position: relative;
+        transition: all 1s ease;
+      }
+      .menu-item:hover {
+        background: pink;
+      }
+
+      /* menu con */
+      .sub-menu-item {
+        list-style: none;
+        background: yellow;
+        width: 100px;
+        border-bottom: 1px solid white;
+        padding: 5px;
+        position: relative;
+        transition: all 1s ease;
+      }
+      .sub-menu-item:hover {
+        background: pink;
+      }
+      .sub-menu {
+        position: absolute;
+        left: 300px;
+        padding-left: 0;
+        top: 100px;
+        transition: all 1s ease;
+
+        dùng để xóa sự kiện chuột để không bị nhẩy
+        pointer-envents: none;
+        /* làm sub menu ẩn đi */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events:all;
+      }
+
+      .menu-item:hover .sub-menu {
+        top: 0;
+        left: 100px;
+        /* làm sub menu ẩn hiện ra */
+        opacity: 1;
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
-    <h1 class="title">Home page</h1>
+    <!-- <h1 class="title">Home page</h1> -->
+
+    <head id="header">
+      <div class="row">
+        <div class="col-12"><p class="title">Chania</p></div>
+      </div>
+    </head>
+    <main id="main row">
+      <section class="sidebar col-3 col-xs-12">
+        <ul class="menu">
+          <li class="menu-item">
+            Home 1
+            <ul class="sub-menu">
+              <li class="sub-menu-item">Home</li>
+              <li class="sub-menu-item">Home</li>
+              <li class="sub-menu-item">Home</li>
+              <li class="sub-menu-item">Home</li>
+            </ul>
+          </li>
+          <li class="menu-item">Home 2</li>
+          <li class="menu-item">Home 3</li>
+          <li class="menu-item">Home 4</li>
+        </ul>
+      </section>
+      <section class="content col-9">
+        <div><h1>The city</h1></div>
+      </section>
+    </main>
   </body>
 </html>
