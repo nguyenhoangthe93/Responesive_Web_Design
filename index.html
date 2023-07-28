@@ -179,6 +179,28 @@
         /* làm sub menu ẩn hiện ra */
         opacity: 1;
         visibility: visible;
+
+        /* hoặc dùng z-index thì hiển thị độ nổi : số càng lớn thì độ nổi lớn lên */
+      }
+
+
+      .btn{
+        padding:10px;
+        background:green;
+        margin-left:100px;
+        border-radius:10px;
+        transition: all 1s ease;
+      }
+      .btn:hover {
+        /* translateX(): cach truc x bao nhieu */
+        /* translateY(): cach truc y bao nhieu */
+        /* rotate: 30deg: xoay bao nhieudo  */
+        /* scale: tang kich bao nhieu lan */
+        /* transform: translateY(-40px); */
+        /* rotate: -90deg; */
+        transform: rotate(90deg);
+        /* transform: scale(2); */
+        /* scale: 2; */
       }
     </style>
   </head>
@@ -209,6 +231,7 @@
       </section>
       <section class="content col-9">
         <div><h1>The city</h1></div>
+        <button class="btn">Click</button>
       </section>
     </main>
   </body>
