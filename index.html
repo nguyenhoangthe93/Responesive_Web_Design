@@ -186,21 +186,52 @@
 
       .btn{
         padding:10px;
-        background:green;
+        background:white;
         margin-left:100px;
         border-radius:10px;
+        border:none;
         transition: all 1s ease;
+
+        /* chạy  */
+        position: relative;
+        z-index: 10;
+        overflow:hidden;
       }
+
       .btn:hover {
         /* translateX(): cach truc x bao nhieu */
+        /* transform : translateX(100px); */
         /* translateY(): cach truc y bao nhieu */
         /* rotate: 30deg: xoay bao nhieudo  */
         /* scale: tang kich bao nhieu lan */
         /* transform: translateY(-40px); */
         /* rotate: -90deg; */
-        transform: rotate(90deg);
+
+        color:white;
+        /* xoay 90 độ */
+        /* rotate: 90deg
+        transform: rotate(90deg); */
+
         /* transform: scale(2); */
         /* scale: 2; */
+      }
+
+       /* chạy  */
+      .btn::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: green;
+        top: 0;
+        left: 0;
+        /* border-radius: 10px; */
+        z-index: -1;
+        transition: all 3s ease;
+      }
+      .btn:hover::after {
+        width: 100%;
+        border:none;
       }
     </style>
   </head>
